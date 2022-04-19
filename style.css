@@ -1,6 +1,24 @@
-.home {
+body {
+  font-size: 14px;
+  font-family: "Speedee", arial, helvetica, sans-serif;
+  font-weight: 400;
+  color: #292929;
+}
+
+.Home {
   text-align: center;
   display: block;
   margin: auto;
   justify-content: center;
+}
+
+.Logo {
+  text-align: center;
+  display: block;
+  margin: auto;
+  justify-content: center;
+}
+
+img {
+  border-radius: 15px;
 }
