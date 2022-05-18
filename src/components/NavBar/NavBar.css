@@ -1,25 +1,29 @@
-
 .navBarButton {
-    width: 4rem ;
-    font-size: 10px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(0, 0, 0);
+  max-height: 65px;
+  font-size: 10px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: gray;
 }
 
 .icon {
-    width: 60%;
-    padding: 5px 6px;
+  max-width: 60%;
+  max-height: 75%;
+  padding: 5px 6px;
 }
 
-.boton{
-    border: 0;
-    background-color: unset;
+.negrita {
+  color: black;
 }
 
-.navBar{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
-    
+.navBar {
+  width: 100%;
+  height: 65px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 8px;
 }
