@@ -2,6 +2,12 @@ import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.css";
 import Card from "./Components/Card";
+import Tarjeta from "./components/Tarjeta/Tarjeta";
+
+var pediYRetira = "src/Assets/PediYRetira.jpg";
+var mcDelivery = "src/Assets/McDelivery.png";
+var ofertas = "src/Assets/OfertasEspeciales.png";
+var cupon = "src/Assets/Promo.png";
 
 function App() {
   const filters = [
@@ -24,6 +30,19 @@ function App() {
 
   return (
     <div className="App">
+      <Tarjeta
+        titulo={"Un McDonald's en tu mano"}
+        imagen={pediYRetira}
+        alt={"Pedí y retirá"}
+      />
+      <Tarjeta
+        titulo={"Pedí, nosotros te lo llevamos"}
+        imagen={mcDelivery}
+        alt={"McDelivery"}
+      />
+      <Tarjeta titulo={"Ofertas especiales"} imagen={ofertas} alt={"Ofertas"} />
+      <Tarjeta titulo={"Cupones"} imagen={cupon} alt={"Cupones"} />
+
       <section //logo mcdonald's
         style={{
           display: "flex",
