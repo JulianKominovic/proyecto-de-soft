@@ -2,35 +2,39 @@ import { useState } from "react";
 import "./NavBar.css";
 import NavBarButton from "./NavBarButton";
 
-import icon1 from "../../assets/icons/icon1.png";
-import icon2 from "../../assets/icons/icon2.png";
-import icon3 from "../../assets/icons/icon3.png";
-import icon4 from "../../assets/icons/icon4.png";
-import icon5 from "../../assets/icons/icon5.png";
+import { McDonalds } from "../../assets/icons/Icons";
+import { PapasFritas } from "../../assets/icons/Icons";
+import { Tag } from "../../assets/icons/Icons";
+import { Cupon } from "../../assets/icons/Icons";
+import { Puntos } from "../../assets/icons/Icons";
 
-const icons = [icon1, icon2, icon3, icon4, icon5];
-const nombre = ["Home", "Pedidos", "Ofertas", "Mis Cupones", "Más"];
+import { Link } from "react-router-dom";
+
+const direccion = ["/", "/catalogo", "/", "/", "/"];
+const boton = [
+  { Icon: McDonalds, nombre: "Home" },
+  { Icon: PapasFritas, nombre: "Pedidos" },
+  { Icon: Tag, nombre: "Ofertas" },
+  { Icon: Cupon, nombre: "Mis Cupones" },
+  { Icon: Puntos, nombre: "Más" },
+];
 
 function NavBar() {
   const [selectedValue, setSelected] = useState(0);
-
   return (
     <footer className="navBar">
-      {nombre.map((item, index) => {
+      {boton.map((item, index) => {
         return (
-          <button
+          <Link
+            to={direccion[index]}
             className="navBarButton"
-            key={item}
+            key={item.nombre}
             onClick={() => {
               setSelected(index);
             }}
           >
-            <NavBarButton
-              src={icons[index]}
-              selected={index === selectedValue}
-              nombre={item}
-            />
-          </button>
+            <NavBarButton boton={item} selected={index === selectedValue} />
+          </Link>
         );
       })}
     </footer>

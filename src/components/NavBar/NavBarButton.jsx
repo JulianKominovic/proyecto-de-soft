@@ -1,19 +1,16 @@
 import "./NavBar.css";
 
-function NavBarButton({
-  src = "src/resources/icons/enDesarrolloIcon",
-  selected = false,
-  nombre = "En desarrollo",
-}) {
+function NavBarButton({ boton, selected = false }) {
   return (
     <>
-      <img
+      <boton.Icon
         className="icon"
-        src={`${src}${selected ? "Selected" : ""}`}
-        alt={nombre}
+        style={{
+          color: `${selected ? "rgb(255 199 44)" : "grey"}`,
+        }}
       />
       <p className="texto">
-        {selected ? <b className="negrita">{nombre}</b> : nombre}
+        {selected ? <b className="negrita">{boton.nombre}</b> : boton.nombre}
       </p>
     </>
   );
