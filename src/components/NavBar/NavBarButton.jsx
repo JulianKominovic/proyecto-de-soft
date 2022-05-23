@@ -9,7 +9,7 @@ function NavBarButton({
     <>
       <img
         className="icon"
-        src={`${src}${selected ? "Selected" : ""}.png`}
+        src={`${src}${selected ? "Selected" : ""}`}
         alt={nombre}
       />
       <p className="texto">

@@ -2,13 +2,13 @@ import { useState } from "react";
 import "./NavBar.css";
 import NavBarButton from "./NavBarButton";
 
-const icons = [
-  "src/resources/icons/icon1",
-  "src/resources/icons/icon2",
-  "src/resources/icons/icon3",
-  "src/resources/icons/icon4",
-  "src/resources/icons/icon5",
-];
+import icon1 from "../../assets/icons/icon1.png";
+import icon2 from "../../assets/icons/icon2.png";
+import icon3 from "../../assets/icons/icon3.png";
+import icon4 from "../../assets/icons/icon4.png";
+import icon5 from "../../assets/icons/icon5.png";
+
+const icons = [icon1, icon2, icon3, icon4, icon5];
 const nombre = ["Home", "Pedidos", "Ofertas", "Mis Cupones", "Más"];
 
 function NavBar() {
