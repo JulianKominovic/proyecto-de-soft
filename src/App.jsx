@@ -32,8 +32,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<Catalogo />} />
         </Routes>
+        <NavBar />
       </BrowserRouter>
-      <NavBar />
     </div>
   );
 }
