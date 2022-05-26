@@ -61,11 +61,12 @@
     height: 2rem;
     transition: ease-in-out .125s;
     font-size: 14px;
+    cursor: pointer;
 }
 .boton-agregar-carrito:active {
-    color: #e1b100;
+    color: #79040b;
     transition: .0625s;
-    background-color: #79040b;
+    background-color: #e1b100;
     font-size: 12px;
 }
 

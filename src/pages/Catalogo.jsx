@@ -72,7 +72,7 @@ const Catalogo = () => {
         ))}
       </section>
 
-      <button className="boton-agregar-carrito">Agregar al Carrito</button>
+      <button className="boton-agregar-carrito">Ver Carrito</button>
     </div>
   );
 };
