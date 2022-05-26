@@ -43,7 +43,7 @@ const combos = [
 
 const Catalogo = () => {
   return (
-    <>
+    <div className="catalogo">
       {/* titulo seccion */}
       <p className="titulo">Pedidos</p>
 
@@ -68,8 +68,10 @@ const Catalogo = () => {
           />
         ))}
       </section>
-      
-    </>
+
+      <p>asdasdsa</p>
+
+    </div>
   );
 };
 
