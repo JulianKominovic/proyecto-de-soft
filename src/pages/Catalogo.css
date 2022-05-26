@@ -53,6 +53,7 @@
     color: #d8070f;
     background-color: #e1b100;
     font-size: 12px;
+    border: 0;
 }
 
 .boton-agregar-carrito:hover {
