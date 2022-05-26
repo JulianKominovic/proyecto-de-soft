@@ -69,7 +69,7 @@ const Catalogo = () => {
         ))}
       </section>
 
-      <p>asdasdsa</p>
+      <button>Agregar al Carrito</button>
 
     </div>
   );
