@@ -2,7 +2,7 @@ import "./CardProducto.css";
 
 const CardProducto = ({ imagen, precio, descripcion }) => {
   return (
-    <div className="card">
+    <div className="card-producto">
       <div className="card-precio">
         <p>{"$" + (precio - 1)}</p>
       </div>
