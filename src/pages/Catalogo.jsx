@@ -68,6 +68,7 @@ const Catalogo = () => {
           />
         ))}
       </section>
+      
     </>
   );
 };
