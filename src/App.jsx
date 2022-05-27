@@ -1,10 +1,12 @@
+import "./App.css";
 import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
-import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Catalogo from "./pages/Catalogo";
 import Detalles from "./pages/Detalles";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Carrito from "./pages/Carrito";
 
 function App() {
   return (
@@ -22,11 +24,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/detalles" element={<Detalles />} />
+          <Route path="/carrito" element={<Carrito/>} />
         </Routes>
         <NavBar />
       </BrowserRouter>
     </div>
-  );
-}
-
+  )}
 export default App;

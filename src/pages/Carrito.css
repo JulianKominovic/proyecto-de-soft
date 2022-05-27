@@ -1,0 +1,9 @@
+.boton-link {
+    position: absolute;
+    padding: 7.5px;
+    z-index: 999;
+    background: blue;
+}
+.boton-volver {
+    color: #fff;
+}
