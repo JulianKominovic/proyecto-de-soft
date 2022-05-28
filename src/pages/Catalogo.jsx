@@ -5,6 +5,7 @@ import cuadruBaconG from "../assets/images/ComboCuadrupleBaconGrande.jpg";
 import grandTastyDobleM from "../assets/images/ComboGrandTastyDobleMediano.png";
 import grandTastyTripleM from "../assets/images/ComboGrandTastyTripleMediano.png";
 import { Link } from "react-router-dom";
+
 import "./Catalogo.css"
 
 <link href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee" rel="stylesheet" type="text/css"/>
@@ -25,22 +26,22 @@ const filters = [
 const combos = [
   {
     imagen: cuadruBaconM,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Mediano Cuadruple Bacon",
   },
   {
     imagen: cuadruBaconG,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Grande Cuadruple Bacon",
   },
   {
     imagen: grandTastyDobleM,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Mediano Grand Tasty Doble",
   },
   {
     imagen: grandTastyTripleM,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Mediano Grand Tasty Triple",
   },
 ];
@@ -48,6 +49,7 @@ const combos = [
 const Catalogo = () => {
   return (
     <div className="catalogo">
+
       {/* titulo seccion */}
       <p className="titulo-pedidos">Pedidos</p>
 
@@ -76,7 +78,6 @@ const Catalogo = () => {
 
       {/* Boton Ver Carrito */}
       <Link
-        // className="boton-ver-carrito"
         to={"/carrito"}
         key={"Ver Carrito"}
       >

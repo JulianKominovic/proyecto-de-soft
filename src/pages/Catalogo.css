@@ -42,6 +42,7 @@
 .catalogo-cards {
     display: flex;
     flex-direction: column;
+    border: 1px solid;
 }
 
 
@@ -63,8 +64,8 @@
 }
 
 .boton-ver-carrito:hover {
-    background-color: #79040b;
-    color: #e1b100;
+    background-color: #d8070f;
+    color: #ffe600;
     height: 2rem;
     transition: ease-in-out .125s;
     font-size: 14px;
@@ -73,7 +74,7 @@
 .boton-ver-carrito:active {
     color: #79040b;
     transition: .0625s;
-    background-color: #e1b100;
+    background-color: #ffe600;
     font-size: 12px;
 }
 
