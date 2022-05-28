@@ -1,10 +1,14 @@
+.Tarjetas {
+  display: flex;
+  align-items: center;
+  /*margin-bottom: 55px;*/
+}
+
 .cards {
   width: 100%;
   background-color: white;
   height: 30vh;
-  max-height: 300px;
 }
-
 
 .card {
   background-color: white;
@@ -14,14 +18,15 @@
   flex-direction: column;
   overflow: hidden;
   align-items: center;
-  min-width: 400px;
+  min-width: 310px;
 }
 
-.cards_item img{
+.cards_item img {
   width: 100%;
 }
 
-.card_title{
+.card_title {
   margin-top: 10px;
+  font-size: 20px;
   margin-bottom: 10px;
 }

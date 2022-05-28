@@ -18,6 +18,7 @@ function App() {
           background: "#d8070f",
           width: "100%",
           boxShadow: "0 -5px 5px 6px rgba(0,0,0,.5)",
+          zIndex:"3",
         }}
       >
         <img
