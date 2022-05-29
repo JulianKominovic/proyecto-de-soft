@@ -1,0 +1,58 @@
+.detalles {
+  display: grid;
+  grid-template-rows: auto min-content auto min-content auto;
+}
+
+.botonAtras {
+  max-width: 25px;
+  margin-top: 45px;
+  margin-left: 2px;
+}
+
+.nombre {
+  height: fit-content;
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.nombre sub {
+  font-size: medium;
+}
+
+.imagen {
+  max-height: 90%;
+  justify-self: center;
+  margin: 10px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.botonesCantidad {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  align-items: center;
+  margin-bottom: 75px;
+}
+
+.botonesCantidad button {
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.botonAgregar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255 199 44);
+  z-index: 1;
+  width: 100%;
+  height: 65px;
+}
