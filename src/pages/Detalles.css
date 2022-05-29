@@ -29,6 +29,10 @@
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
+.descripcion {
+  margin: 0 20px;
+}
+
 .botonesCantidad {
   border: 1px solid black;
   border-radius: 20px;
