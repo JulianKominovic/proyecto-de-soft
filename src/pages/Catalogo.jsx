@@ -4,6 +4,7 @@ import cuadruBaconM from "../assets/images/ComboCuadrupleBaconMediano.jpg";
 import cuadruBaconG from "../assets/images/ComboCuadrupleBaconGrande.jpg";
 import grandTastyDobleM from "../assets/images/ComboGrandTastyDobleMediano.png";
 import grandTastyTripleM from "../assets/images/ComboGrandTastyTripleMediano.png";
+import { Link } from "react-router-dom";
 
 const filters = [
   "Promociones",
@@ -46,6 +47,10 @@ const Catalogo = () => {
     <>
       {/* titulo seccion */}
       <p className="titulo">Pedidos</p>
+
+      <h2>Pedidos</h2>
+      <Link to="/catalogo/elegirLocal">Elegir Local</Link>
+
 
       {/* caja de filtros */}
       <section className="filtros">

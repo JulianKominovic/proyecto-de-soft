@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/NavBar";
 import "./App.css";
 import Home from "./pages/Home";
 import Catalogo from "./pages/Catalogo";
+import { ElegirLocal } from "./components/ElegirLocal/ElegirLocal";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           background: "#d8070f",
           width: "100%",
           boxShadow: "0 -5px 5px 6px rgba(0,0,0,.5)",
+          zIndex:"3",
         }}
       >
         <img
@@ -31,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/catalogo/elegirLocal" element={<ElegirLocal />} />
         </Routes>
         <NavBar />
       </BrowserRouter>
