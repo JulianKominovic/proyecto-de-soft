@@ -3,30 +3,38 @@
   flex-direction: column;
   margin: 1rem auto 1rem;
   width: 212px;
-  border-radius: 5%;
+  border-radius: 20px;
   z-index: 0;
+  position: relative;
 }
 
 .card-precio {
-  position: relative;
-  top: 13.16rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 20px 20px;
   margin: 0 0 0 auto;
   padding: 0 4px;
-  backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(10px);
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-inline: 10px;
 }
 
 .card-precio p {
-  margin: 8px;
   font-size: 18px;
   color: white;
-  z-index: 0;
+  margin-left: 8px;
+  text-align: left;
 }
 
 .card-img {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 5%;
+  border-radius: 20px;
+  width: 100%;
 }
 
 .card-descripcion {

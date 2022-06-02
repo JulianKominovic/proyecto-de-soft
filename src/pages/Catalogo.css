@@ -1,0 +1,40 @@
+.filtros {
+  display: flex;
+  overflow-x: scroll;
+  gap: 16px;
+  align-items: center;
+  white-space: nowrap;
+  height: 60px;
+  padding: 0 20px;
+}
+
+h1.titulo {
+  margin-top: 20px;
+  margin-block-end: 20px;
+}
+
+h2 {
+  text-align: left;
+  padding: 0 0 0 20px;
+}
+
+.cards {
+  padding: 10px 20px;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.cards .card {
+  max-height: 300px;
+  box-shadow: none;
+  margin: 0;
+}
+
+.cards .card img {
+  object-fit: cover;
+}
+
+.cards__pedidos {
+  justify-content: left;
+}

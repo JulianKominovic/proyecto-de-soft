@@ -11,11 +11,11 @@ const Slider = ({ images = [] }) => {
   const [intervalId, setIntervalId] = useState(null);
 
   const initInterval = () => {
-    setIntervalId(
-      setInterval(() => {
-        setIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
-      }, 2000)
-    );
+    const id = setInterval(() => {
+      setIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+    }, 2000);
+    setIntervalId(id);
+    return id;
   };
 
   const handlers = useSwipeable({
@@ -33,10 +33,11 @@ const Slider = ({ images = [] }) => {
   });
 
   useEffect(() => {
-    initInterval();
+    const id = initInterval();
 
     return () => {
       clearInterval(intervalId);
+      clearInterval(id);
     };
   }, []);
   return (

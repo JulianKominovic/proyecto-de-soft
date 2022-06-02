@@ -4,6 +4,7 @@ import cuadruBaconM from "../assets/images/ComboCuadrupleBaconMediano.jpg";
 import cuadruBaconG from "../assets/images/ComboCuadrupleBaconGrande.jpg";
 import grandTastyDobleM from "../assets/images/ComboGrandTastyDobleMediano.png";
 import grandTastyTripleM from "../assets/images/ComboGrandTastyTripleMediano.png";
+import "./Catalogo.css";
 
 const filters = [
   "Promociones",
@@ -44,21 +45,21 @@ const combos = [
 const Catalogo = () => {
   return (
     <>
-      {/* titulo seccion */}
-      <p className="titulo">Pedidos</p>
-
       {/* caja de filtros */}
       <section className="filtros">
         {filters.map((filter) => (
           <span key={filter}>{filter}</span>
         ))}
       </section>
-
       <hr className="linea-horizontal" />
 
+      {/* titulo seccion */}
+      <h1 className="titulo">Pedidos</h1>
+
+      <h2>Combos</h2>
+
       {/* Cards */}
-      <section className="cards">
-        <p>McCombos</p>
+      <section className="cards cards__pedidos">
         {combos.map((combo) => (
           <Card
             key={combo.descripcion}

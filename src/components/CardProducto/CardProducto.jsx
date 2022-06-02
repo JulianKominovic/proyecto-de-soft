@@ -8,10 +8,10 @@ const CardProducto = ({ imagen, precio, descripcion }) => {
       className="card"
     >
       <div className="card-precio">
+        <p className="card-descripcion">{descripcion}</p>
         <p>{"$" + (precio - 1)}</p>
       </div>
       <img className="card-img" src={imagen} />
-      <p className="card-descripcion">{descripcion}</p>
     </Link>
   );
 };
