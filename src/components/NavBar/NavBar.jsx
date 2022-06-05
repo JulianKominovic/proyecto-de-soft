@@ -10,7 +10,7 @@ import { Puntos } from "../../assets/icons/Icons";
 
 import { Link } from "react-router-dom";
 
-const direccion = ["/", "/catalogo", "/", "/", "/"];
+const direccion = ["/", "/catalogo", "/pago", "/", "/"];
 const boton = [
   { Icon: McDonalds, nombre: "Home" },
   { Icon: PapasFritas, nombre: "Pedidos" },

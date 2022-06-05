@@ -1,0 +1,96 @@
+.resumenPedido {
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.resumenPedido h2 {
+  margin-bottom: 7px;
+}
+
+.resumenPedido ul {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.resumenPedido li {
+  margin-bottom: 7px;
+}
+
+.formulario {
+  background-color: rgb(236, 236, 236);
+  padding: 0 20px 10px 20px;
+}
+
+.formulario h2 {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.formulario ul {
+  list-style: none;
+  text-align: left;
+}
+
+.campo {
+  font-size: larger;
+  background-color: transparent;
+  border-style: solid;
+  border-color: rgb(161, 161, 161);
+  border-width: 0 0 1px 0;
+  height: 40px;
+  margin: 7px 0;
+}
+
+.largo {
+  width: 100%;
+}
+
+.documento {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.desplegable {
+  border-radius: 7px;
+  border: rgb(161, 161, 161) solid 1px;
+  padding: 5px;
+  height: 35px;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+}
+
+.medio {
+  width: 90%;
+  justify-self: right;
+}
+
+.tresCampos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.corto {
+  width: 90%;
+  justify-self: right;
+}
+
+.fecha .campo {
+  max-width: 45%;
+  justify-self: left;
+}
+
+.botonSubmit {
+  font-size: larger;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255 199 44);
+  z-index: 1;
+  width: 100%;
+  height: 65px;
+  border-style: none;
+}
