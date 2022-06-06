@@ -1,0 +1,16 @@
+.lugares{
+    display: flex;
+    margin-top: 12px;
+    list-style: none;
+    border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.lugar_item img{
+    width: 35px;
+    height: 35px;
+}
+
+.lugar_item span{
+    margin: 0px;
+    display: inline-block;
+}
