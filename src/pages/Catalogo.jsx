@@ -48,6 +48,7 @@ const Catalogo = () => {
       {/* titulo seccion */}
       <p className="titulo">Pedidos</p>
 
+      {/* Seccion elegir local*/}
       <h2>Pedidos</h2>
       <Link to="/catalogo/elegirLocal">Elegir Local</Link>
 
