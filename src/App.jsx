@@ -1,32 +1,22 @@
+import "./App.css";
 import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
-import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Catalogo from "./pages/Catalogo";
 import Detalles from "./pages/Detalles";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Carrito from "./pages/Carrito";
 
 function App() {
   return (
     <div className="App">
-      <section //logo mcdonald's
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "5px 0",
-          position: "fixed",
-          background: "#d8070f",
-          width: "100%",
-          boxShadow: "0 -5px 5px 6px rgba(0,0,0,.5)",
-          zIndex:"3",
-        }}
-      >
-        <img
+      {/* logo mcdonald's */}
+      <section className="logo-container">
+        <img className="img-logo"
           src="https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg"
           alt="mc-logo"
           title="Me Encanta"
-          width={"30px"}
         />
       </section>
       <BrowserRouter>
@@ -34,11 +24,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/detalles" element={<Detalles />} />
+          <Route path="/carrito" element={<Carrito/>} />
         </Routes>
         <NavBar />
       </BrowserRouter>
     </div>
-  );
-}
-
+  )}
 export default App;
