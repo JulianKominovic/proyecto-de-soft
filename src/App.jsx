@@ -5,7 +5,6 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Catalogo from "./pages/Catalogo";
 import Detalles from "./pages/Detalles";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Carrito from "./pages/Carrito";
 
 function App() {
@@ -13,7 +12,8 @@ function App() {
     <div className="App">
       {/* logo mcdonald's */}
       <section className="logo-container">
-        <img className="img-logo"
+        <img
+          className="img-logo"
           src="https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg"
           alt="mc-logo"
           title="Me Encanta"
@@ -24,10 +24,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/detalles" element={<Detalles />} />
-          <Route path="/carrito" element={<Carrito/>} />
+          <Route path="/carrito" element={<Carrito />} />
         </Routes>
         <NavBar />
       </BrowserRouter>
     </div>
-  )}
+  );
+}
 export default App;
