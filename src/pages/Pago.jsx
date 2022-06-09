@@ -114,7 +114,7 @@ const Pago = () => {
             />
           </li>
         </ul>
-        <input className="botonSubmit" type="submit" value="Pagar" />
+        <input className="botonSubmit" type="submit" value="Finalizar pedido" />
       </form>
     </>
   );
