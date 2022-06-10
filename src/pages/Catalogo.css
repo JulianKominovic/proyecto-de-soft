@@ -1,85 +1,102 @@
 @import url(//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee);
 
 .catalogo {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-    margin-bottom: 100px;
-    font-family: "Speedee", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 100px;
+  font-family: "Speedee", sans-serif;
 }
 
 .catalogo .titulo-pedidos {
-    margin-left: 2rem;
-    font-weight: 700;
-    font-size: xx-large;
-    text-align: start;
+  margin-left: 2rem;
+  font-weight: 700;
+  font-size: xx-large;
+  text-align: start;
 }
 
 .catalogo .filtros {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    overflow: auto;
-    margin: 1rem 20%;
-    gap: 12px;
-    font-family: "Roboto", arial;
-    font-size: 14px;
-    font-weight: 400;
-    white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow: auto;
+  margin: 1rem 20%;
+  gap: 12px;
+  font-family: "Roboto", arial;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
 }
 .catalogo .filtros::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .catalogo .titulo-filtro {
-    margin-top: 1rem;
-    height: 100%;
-    align-self: center;
-    font-weight: 600;
-    font-size: 22px;
+  margin-top: 1rem;
+  height: 100%;
+  align-self: center;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .catalogo-cards {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /* boton ver carrito */
 .catalogo .boton-ver-carrito {
-    font-family: "speedee";
-    border-radius: 5px;
-    height: 1.5rem;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 65px;
-    font-weight: 700;
-    transition: ease-in-out .125s;
-    color: #d8070f;
-    background-color: #e1b100;
-    font-size: 12px;
-    border: 0;
+  font-family: "speedee";
+  border-radius: 5px;
+  height: 1.5rem;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 65px;
+  font-weight: 700;
+  transition: ease-in-out 0.125s;
+  color: #d8070f;
+  background-color: #e1b100;
+  font-size: 12px;
+  border: 0;
 }
 
 .boton-ver-carrito:hover {
-    background-color: #d8070f;
-    color: #ffe600;
-    height: 2rem;
-    transition: ease-in-out .125s;
-    font-size: 14px;
-    cursor: pointer;
+  background-color: #d8070f;
+  color: #ffe600;
+  height: 2rem;
+  transition: ease-in-out 0.125s;
+  font-size: 14px;
+  cursor: pointer;
 }
 .boton-ver-carrito:active {
-    color: #79040b;
-    transition: .0625s;
-    background-color: #ffe600;
-    font-size: 12px;
+  color: #79040b;
+  transition: 0.0625s;
+  background-color: #ffe600;
+  font-size: 12px;
 }
 
 .boton-ver-carrito:not(:active) {
-    transition: ease-in-out .125s;
+  transition: ease-in-out 0.125s;
 }
 .boton-ver-carrito:not(:hover) {
-    transition: ease-in-out .125s;
+  transition: ease-in-out 0.125s;
 }
+
+/*Elegir Local*/
+.boton {
+    margin-top: 7px;
+    border: 1px solid #007ef2; /*anchura, estilo y color borde*/
+    padding: 7px; /*espacio alrededor texto*/
+    background-color: #007ef2; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 5px; /*bordes redondos*/
+    display: flex;
+    margin-left: 2rem;
+    }
+
+
+
+

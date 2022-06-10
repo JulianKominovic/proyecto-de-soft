@@ -6,6 +6,10 @@ import grandTastyDobleM from "../assets/images/ComboGrandTastyDobleMediano.png";
 import grandTastyTripleM from "../assets/images/ComboGrandTastyTripleMediano.png";
 import { Link } from "react-router-dom";
 
+import "./Catalogo.css"
+
+<link href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee" rel="stylesheet" type="text/css"/>
+
 const filters = [
   "Promociones",
   "McCombos",
@@ -50,15 +54,14 @@ const Catalogo = () => {
       <p className="titulo-pedidos">Pedidos</p>
 
       {/* Seccion elegir local*/}
-      <section className="local">
-        <h2>Pedidos</h2>
+      <section className="elegir-local">
+        
         <Link to="/catalogo/elegirLocal">
-          <button type="button">
-              Elegir Local
+          <button className="boton">
+            Pedí y Retirá
           </button>
         </Link>
       </section>
-
 
       {/* caja de filtros */}
       <section className="filtros">

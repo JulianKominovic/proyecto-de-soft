@@ -1,8 +1,12 @@
 .lugares{
-    display: flex;
     margin-top: 12px;
     list-style: none;
     border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.lugar_item{
+    display: flex;
+    align-items: center;
 }
 
 .lugar_item img{
