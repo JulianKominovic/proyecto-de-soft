@@ -20,6 +20,8 @@ const boton = [
 ];
 
 function NavBar() {
+  //const url = new URL(window.location.href)
+
   const [selectedValue, setSelected] = useState(0);
   return (
     <footer className="navBar">
