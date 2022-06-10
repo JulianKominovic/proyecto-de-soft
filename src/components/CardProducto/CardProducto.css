@@ -13,7 +13,7 @@
   top: 13.16rem;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin: 0 0 0 auto;
+  margin: 0 5px 0 auto;
   padding: 0 4px;
   backdrop-filter: blur(1.5px);
 }
@@ -28,7 +28,7 @@
 .card-img {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
   border-radius: 5%;
-  max-width: 70%;
+  max-width: 50%;
 }
 
 .card-nombre {
