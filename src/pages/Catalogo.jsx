@@ -50,8 +50,14 @@ const Catalogo = () => {
       <p className="titulo-pedidos">Pedidos</p>
 
       {/* Seccion elegir local*/}
-      <h2>Pedidos</h2>
-      <Link to="/catalogo/elegirLocal">Elegir Local</Link>
+      <section className="local">
+        <h2>Pedidos</h2>
+        <Link to="/catalogo/elegirLocal">
+          <button type="button">
+              Elegir Local
+          </button>
+        </Link>
+      </section>
 
 
       {/* caja de filtros */}

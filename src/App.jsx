@@ -7,6 +7,7 @@ import Catalogo from "./pages/Catalogo";
 import Detalles from "./pages/Detalles";
 import Pago from "./pages/Pago";
 import Carrito from "./pages/Carrito";
+import { ElegirLocal } from "./components/ElegirLocal/ElegirLocal";
 
 function App() {
   return (
