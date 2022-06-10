@@ -28,9 +28,10 @@
 .card-img {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
   border-radius: 5%;
+  max-width: 70%;
 }
 
-.card-descripcion {
+.card-nombre {
   margin: 5px;
   font-weight: 400;
 }

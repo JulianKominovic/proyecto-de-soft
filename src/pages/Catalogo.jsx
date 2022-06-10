@@ -74,7 +74,7 @@ const Catalogo = () => {
                 key={product.name}
                 imagen={product.image}
                 precio={product.price}
-                descripcion={product.description}
+                nombre={product.name}
                 id={product._id}
               />
             ))}
