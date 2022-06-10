@@ -57,7 +57,7 @@ const Carrito = () => {
         <Link to="/catalogo">
           <button className="boton-volver">Seguir pidiendo</button>
         </Link>
-        <Link to="/pagar">
+        <Link to="/pago">
           <button className="boton-pagar">Pagar</button>
         </Link>
       </div>

@@ -22,8 +22,6 @@ function NavBar() {
     setUrl(new URL(window.location.href).pathname);
   }, [location]);
 
-  console.log(url);
-
   return (
     <footer className="navBar">
       {boton.map((item, index) => {
