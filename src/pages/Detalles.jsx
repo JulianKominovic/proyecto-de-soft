@@ -13,7 +13,6 @@ const Detalles = () => {
   const [product, setProduct] = useState(null);
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
-  console.log(id);
 
   useEffect(() => {
     fetch(`http://localhost:4000/api/products/${id}`)
@@ -33,11 +32,7 @@ const Detalles = () => {
         <h1 style={{ marginTop: "80px" }}>Cargando...</h1>
       ) : (
         <div className="detalles">
-          <Link
-            to={"/catalogo"}
-            style={{ maxWidth: "25px", marginTop: "45px", marginLeft: "2px" }}
-            className="botonAtras"
-          >
+          <Link to={"/catalogo"} className="botonAtras">
             <FlechaAtras style={{ color: "black" }} />
           </Link>
           <div className="nombre">

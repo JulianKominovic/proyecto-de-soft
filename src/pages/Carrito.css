@@ -1,32 +1,52 @@
 @import url(//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee);
 
 .boton-link {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-    text-decoration: none;
-    height: 35.5px;
-    z-index: 999;
+  position: fixed;
+  z-index: 999;
+  max-width: 25px;
+  margin-top: 6px;
+  margin-left: 2px;
 }
-.boton-volver {
-    font-family: "Speedee", arial;
-    color: #fff;
-    transition: ease-in-out .125s;
-    cursor: pointer;
-    font-size: 16px;
-    color: #ffc800;
-    margin-left: .2rem;
-}
+/* .boton-volver {
+  font-family: "Speedee", arial;
+  color: #fff;
+  transition: ease-in-out 0.125s;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffc800;
+  margin-left: 0.2rem;
+} */
 .boton-volver:hover {
-    font-family: "Speedee", arial;
-    color: #ffe600;
-    margin-left: .5rem;
+  font-family: "Speedee", arial;
+  color: #ffe600;
+  margin-left: 0.5rem;
 }
 
 .lista-carrito {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.botones-inferiores {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 1;
+  justify-content: center;
+}
+
+.boton-pagar {
+  background-color: rgb(255 199 44);
+  height: 65px;
+  width: 100%;
+}
+
+.boton-volver {
+  background-color: white;
+  height: 65px;
+  width: 100%;
 }
