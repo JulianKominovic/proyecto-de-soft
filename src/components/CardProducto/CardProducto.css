@@ -1,10 +1,11 @@
-.card {
+.card-producto {
   display: flex;
   flex-direction: column;
-  margin: 1rem auto 1rem;
+  margin: 0 auto;
   width: 212px;
   border-radius: 5%;
   z-index: 0;
+  /* outline: 1px solid blue; */
 }
 
 .card-precio {
@@ -32,4 +33,9 @@
 .card-descripcion {
   margin: 5px;
   font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

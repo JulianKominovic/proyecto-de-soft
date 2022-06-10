@@ -22,31 +22,32 @@ const filters = [
 const combos = [
   {
     imagen: cuadruBaconM,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Mediano Cuadruple Bacon",
   },
   {
     imagen: cuadruBaconG,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Grande Cuadruple Bacon",
   },
   {
     imagen: grandTastyDobleM,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Mediano Grand Tasty Doble",
   },
   {
     imagen: grandTastyTripleM,
-    precio: "500",
+    precio: 500,
     descripcion: "McCombo Mediano Grand Tasty Triple",
   },
 ];
 
 const Catalogo = () => {
   return (
-    <>
+    <div className="catalogo">
+
       {/* titulo seccion */}
-      <p className="titulo">Pedidos</p>
+      <p className="titulo-pedidos">Pedidos</p>
 
       {/* Seccion elegir local*/}
       <h2>Pedidos</h2>
@@ -56,15 +57,16 @@ const Catalogo = () => {
       {/* caja de filtros */}
       <section className="filtros">
         {filters.map((filter) => (
-          <span key={filter}>{filter}</span>
+          <span className="span-filtro" key={filter}>{filter}</span>
         ))}
       </section>
 
       <hr className="linea-horizontal" />
 
+      <div><p className="titulo-filtro">McCombos</p></div>
+
       {/* Cards */}
-      <section className="cards">
-        <p>McCombos</p>
+      <section className="catalogo-cards">
         {combos.map((combo) => (
           <Card
             key={combo.descripcion}
@@ -74,7 +76,15 @@ const Catalogo = () => {
           />
         ))}
       </section>
-    </>
+
+      {/* Boton Ver Carrito */}
+      <Link
+        to={"/carrito"}
+        key={"Ver Carrito"}
+      >
+        <button className="boton-ver-carrito">Ver Carrito</button>
+      </Link>
+    </div>
   );
 };
 

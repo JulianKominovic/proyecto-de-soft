@@ -1,0 +1,32 @@
+@import url(//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee);
+
+.boton-link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    text-decoration: none;
+    height: 35.5px;
+    z-index: 999;
+}
+.boton-volver {
+    font-family: "Speedee", arial;
+    color: #fff;
+    transition: ease-in-out .125s;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffc800;
+    margin-left: .2rem;
+}
+.boton-volver:hover {
+    font-family: "Speedee", arial;
+    color: #ffe600;
+    margin-left: .5rem;
+}
+
+.lista-carrito {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}

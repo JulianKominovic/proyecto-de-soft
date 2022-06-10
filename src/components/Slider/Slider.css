@@ -1,6 +1,7 @@
 .slider {
   width: 100%;
-
+  margin-top: 50px;
+  margin-bottom: 50px;
   background-color: white;
   height: 30vh;
   max-height: 300px;
