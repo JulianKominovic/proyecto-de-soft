@@ -1,39 +1,40 @@
 import { useState } from "react";
-import "./NavBar.css";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 import NavBarButton from "./NavBarButton";
+import "./NavBar.css";
 
 import { McDonalds } from "../../assets/icons/Icons";
 import { PapasFritas } from "../../assets/icons/Icons";
-import { Tag } from "../../assets/icons/Icons";
-import { Cupon } from "../../assets/icons/Icons";
-import { Puntos } from "../../assets/icons/Icons";
 
-import { Link } from "react-router-dom";
-
-const direccion = ["/", "/catalogo", "/pago", "/", "/"];
 const boton = [
-  { Icon: McDonalds, nombre: "Home" },
-  { Icon: PapasFritas, nombre: "Pedidos" },
-  { Icon: Tag, nombre: "Ofertas" },
-  { Icon: Cupon, nombre: "Mis Cupones" },
-  { Icon: Puntos, nombre: "Más" },
+  { Icon: McDonalds, nombre: "Home", direccion: "/" },
+  { Icon: PapasFritas, nombre: "Pedidos", direccion: "/catalogo" },
 ];
 
 function NavBar() {
-  const [selectedValue, setSelected] = useState(0);
+  const [url, setUrl] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    setUrl(new URL(window.location.href).pathname);
+  }, [location]);
+
   return (
     <footer className="navBar">
       {boton.map((item, index) => {
         return (
           <Link
-            to={direccion[index]}
+            to={item.direccion}
             className="navBarButton"
             key={item.nombre}
-            onClick={() => {
-              setSelected(index);
-            }}
+            // onClick={() => {
+            //   setSelected(index);
+            // }}
           >
-            <NavBarButton boton={item} selected={index === selectedValue} />
+            <NavBarButton boton={item} selected={url === item.direccion} />
           </Link>
         );
       })}

@@ -6,6 +6,8 @@ import "./Detalles.css";
 import { FlechaAtras } from "../assets/icons/Icons";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import useCarrito from "../context/useCarrito";
+import { useNavigate } from "react-router-dom";
 
 const Detalles = () => {
   const [cantidad, setCantidad] = useState(1);
@@ -13,7 +15,8 @@ const Detalles = () => {
   const [product, setProduct] = useState(null);
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
-  console.log(id);
+  const { addItem } = useCarrito();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:4000/api/products/${id}`)
@@ -33,23 +36,23 @@ const Detalles = () => {
         <h1 style={{ marginTop: "80px" }}>Cargando...</h1>
       ) : (
         <div className="detalles">
-          <Link
-            to={"/catalogo"}
-            style={{ maxWidth: "25px", marginTop: "45px", marginLeft: "2px" }}
-            className="botonAtras"
-          >
-            <FlechaAtras style={{ color: "black" }} />
-          </Link>
           <div className="nombre">
-            <h1 style={{ textAlign: "left" }}>{product.name}</h1>
-            <sub>$ {product.price}</sub>
+            <Link to={"/catalogo"} className="botonAtras">
+              <FlechaAtras style={{ color: "black" }} />
+            </Link>
+            <div>
+              <h1 style={{ textAlign: "right" }}>{product.name}</h1>
+              <sub style={{ display: "block", textAlign: "right" }}>
+                $ {product.price}
+              </sub>
+            </div>
           </div>
           <img className="imagen" src={product.image} alt="img" />
           <p className="descripcion">{product.description}</p>
           <div className="botonesCantidad">
             <button
               onClick={() => {
-                cantidad > 1 ? setCantidad(cantidad - 1) : <></>;
+                cantidad > 1 && setCantidad((prev) => prev - 1);
               }}
             >
               -
@@ -57,15 +60,24 @@ const Detalles = () => {
             <span>{cantidad}</span>
             <button
               onClick={() => {
-                cantidad < 5 ? setCantidad(cantidad + 1) : <></>;
+                cantidad < 5 && setCantidad((prev) => prev + 1);
               }}
             >
               +
             </button>
           </div>
-          <Link to="/catalogo">
-            <button className="botonAgregar">Añadir al Pedido</button>
-          </Link>
+
+          <button
+            className="botonAgregar"
+            onClick={() => {
+              addItem(product, cantidad);
+              navigate("/", {
+                replace: true,
+              });
+            }}
+          >
+            Añadir al Pedido
+          </button>
         </div>
       )}
     </>
