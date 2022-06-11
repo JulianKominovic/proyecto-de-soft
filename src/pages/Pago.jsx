@@ -27,11 +27,7 @@ const Pago = () => {
 
   return (
     <>
-      <Link
-        to={"/"}
-        style={{ maxWidth: "25px", marginTop: "45px", marginLeft: "2px" }}
-        className="botonAtras"
-      >
+      <Link to={"/carrito"} className="botonAtras">
         <FlechaAtras style={{ color: "black" }} />
       </Link>
 

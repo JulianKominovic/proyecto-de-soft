@@ -1,14 +1,17 @@
 import React from "react";
 import Card from "../components/CardProducto/CardProducto";
-import cuadruBaconM from "../assets/images/ComboCuadrupleBaconMediano.jpg";
-import cuadruBaconG from "../assets/images/ComboCuadrupleBaconGrande.jpg";
-import grandTastyDobleM from "../assets/images/ComboGrandTastyDobleMediano.png";
-import grandTastyTripleM from "../assets/images/ComboGrandTastyTripleMediano.png";
 import { Link } from "react-router-dom";
 
-import "./Catalogo.css"
+import { useEffect } from "react";
+import { useState } from "react";
 
-<link href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee" rel="stylesheet" type="text/css"/>
+import "./Catalogo.css";
+
+<link
+  href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee"
+  rel="stylesheet"
+  type="text/css"
+/>;
 
 const filters = [
   "Promociones",
@@ -23,67 +26,67 @@ const filters = [
   "Desayunos y Meriendas",
 ];
 
-const combos = [
-  {
-    imagen: cuadruBaconM,
-    precio: 500,
-    descripcion: "McCombo Mediano Cuadruple Bacon",
-  },
-  {
-    imagen: cuadruBaconG,
-    precio: 500,
-    descripcion: "McCombo Grande Cuadruple Bacon",
-  },
-  {
-    imagen: grandTastyDobleM,
-    precio: 500,
-    descripcion: "McCombo Mediano Grand Tasty Doble",
-  },
-  {
-    imagen: grandTastyTripleM,
-    precio: 500,
-    descripcion: "McCombo Mediano Grand Tasty Triple",
-  },
-];
-
 const Catalogo = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/api/products/`)
+      .then((response) => response.json())
+      .then((response) => {
+        setProducts(response);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
-    <div className="catalogo">
+    <>
+      {" "}
+      {isLoading ? (
+        <h1 style={{ marginTop: "80px" }}>Cargando...</h1>
+      ) : (
+        <div className="catalogo">
+          {/* titulo seccion */}
+          <p className="titulo-pedidos">Pedidos</p>
 
-      {/* titulo seccion */}
-      <p className="titulo-pedidos">Pedidos</p>
+          {/* caja de filtros */}
+          <section className="filtros">
+            {filters.map((filter) => (
+              <span className="span-filtro" key={filter}>
+                {filter}
+              </span>
+            ))}
+          </section>
 
-      {/* caja de filtros */}
-      <section className="filtros">
-        {filters.map((filter) => (
-          <span className="span-filtro" key={filter}>{filter}</span>
-        ))}
-      </section>
+          <hr className="linea-horizontal" />
 
-      <hr className="linea-horizontal" />
+          <div>
+            <p className="titulo-filtro">McCombos</p>
+          </div>
 
-      <div><p className="titulo-filtro">McCombos</p></div>
+          {/* Cards */}
+          <section className="catalogo-cards">
+            {products.map((product) => (
+              <Card
+                key={product.name}
+                imagen={product.image}
+                precio={product.price}
+                nombre={product.name}
+                id={product._id}
+              />
+            ))}
+          </section>
 
-      {/* Cards */}
-      <section className="catalogo-cards">
-        {combos.map((combo) => (
-          <Card
-            key={combo.descripcion}
-            imagen={combo.imagen}
-            precio={combo.precio}
-            descripcion={combo.descripcion}
-          />
-        ))}
-      </section>
-
-      {/* Boton Ver Carrito */}
-      <Link
-        to={"/carrito"}
-        key={"Ver Carrito"}
-      >
-        <button className="boton-ver-carrito">Ver Carrito</button>
-      </Link>
-    </div>
+          {/* Boton Ver Carrito */}
+          <Link to={"/carrito"} key={"Ver Carrito"}>
+            <button className="boton-ver-carrito">Ver Carrito</button>
+          </Link>
+        </div>
+      )}
+    </>
   );
 };
 
