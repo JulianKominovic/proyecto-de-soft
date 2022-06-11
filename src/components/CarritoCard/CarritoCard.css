@@ -1,0 +1,32 @@
+.carrito__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.carrito__card__details {
+  display: flex;
+  align-items: center;
+}
+.carrito__card__image {
+  width: 50%;
+  height: auto;
+}
+
+.carrito__card__side {
+  text-align: end;
+}
+.carrito__card__side p {
+  color: rgba(0, 0, 0, 0.4);
+}
+.carrito__delete__button {
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  font-weight: 900;
+}

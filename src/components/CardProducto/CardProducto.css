@@ -5,35 +5,33 @@
   width: 212px;
   border-radius: 5%;
   z-index: 0;
-  /* outline: 1px solid blue; */
 }
 
 .card-precio {
-  position: relative;
-  top: 13.16rem;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin: 0 5px 0 auto;
-  padding: 0 4px;
   backdrop-filter: blur(1.5px);
 }
 
 .card-precio p {
-  margin: 8px;
   font-size: 18px;
   color: white;
   z-index: 0;
 }
 
 .card-img {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 5%;
-  max-width: 50%;
+  width: 100%;
 }
 
 .card-nombre {
-  margin: 5px;
+  width: 100%;
+  margin-top: 10px;
   font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  text-align: left;
 }
 
 a {

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 import "./Catalogo.css";
+import useCarrito from "../context/useCarrito";
 
 <link
   href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee"
@@ -29,6 +30,7 @@ const filters = [
 const Catalogo = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState(null);
+  const { getCarritoItems } = useCarrito();
 
   useEffect(() => {
     fetch(`http://localhost:4000/api/products/`)
@@ -69,21 +71,25 @@ const Catalogo = () => {
 
           {/* Cards */}
           <section className="catalogo-cards">
-            {products.map((product) => (
-              <Card
-                key={product.name}
-                imagen={product.image}
-                precio={product.price}
-                nombre={product.name}
-                id={product._id}
-              />
-            ))}
+            {products.map((product) =>
+              !getCarritoItems().some((item) => item._id === product._id) ? (
+                <Card
+                  key={product.name}
+                  imagen={product.image}
+                  precio={product.price}
+                  nombre={product.name}
+                  id={product._id}
+                />
+              ) : null
+            )}
           </section>
 
           {/* Boton Ver Carrito */}
-          <Link to={"/carrito"} key={"Ver Carrito"}>
-            <button className="boton-ver-carrito">Ver Carrito</button>
-          </Link>
+          {getCarritoItems()?.length > 0 ? (
+            <Link to={"/carrito"} key={"Ver Carrito"}>
+              <button className="boton-ver-carrito">Ver Carrito</button>
+            </Link>
+          ) : null}
         </div>
       )}
     </>
