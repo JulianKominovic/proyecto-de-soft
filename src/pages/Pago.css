@@ -102,3 +102,8 @@
   height: 65px;
   border-style: none;
 }
+
+.botonVolver {
+  background-color: rgb(255 199 44);
+  color: black;
+}

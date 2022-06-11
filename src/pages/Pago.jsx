@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 import "./Pago.css";
 
@@ -19,6 +21,7 @@ const Pago = () => {
       (total = total + currentValue.cantidad * currentValue.product.precio),
     0
   );
+  const redireccionar = useNavigate();
 
   const precioFormateado = new Intl.NumberFormat("es-AR", {
     style: "currency",
@@ -110,8 +113,26 @@ const Pago = () => {
             />
           </li>
         </ul>
-        <input className="botonSubmit" type="submit" value="Finalizar pedido" />
       </form>
+      <button
+        className="botonSubmit"
+        onClick={() => {
+          swal(
+            "Pago realizado correctamente",
+            `Se podrá retirar el pedido en:\n${direccion}`,
+            "success",
+            {
+              button: {
+                text: "Volver a Home",
+                value: redireccionar("/"),
+                className: "botonVolver",
+              },
+            }
+          );
+        }}
+      >
+        Finalizar pedido
+      </button>
     </>
   );
 };
