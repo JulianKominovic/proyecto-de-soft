@@ -1,7 +1,7 @@
 import React from "react";
 import "./ElegirLocal.css";
-
 import Local from "../Local/Local";
+import { Link } from "react-router-dom";
 
 const direcciones = [
   "Av. Tomás Espora 611, Adrogue",
@@ -16,9 +16,13 @@ export const ElegirLocal = () => {
     <section className="ElegirLocal">
       <h1>Lista de restaurantes</h1>
 
-      {direcciones.map((direccion) => (
-        <Local direccion={direccion} />
-      ))}
+      {direcciones.map((item) => {
+        return (
+          <Link to={"/catalogo"} key={item}>
+            <Local key={item} direccion={item} />
+          </Link>
+        );
+      })}
     </section>
   );
 };
