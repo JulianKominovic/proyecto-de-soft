@@ -71,7 +71,7 @@ const Detalles = () => {
             className="botonAgregar"
             onClick={() => {
               addItem(product, cantidad);
-              navigate("/", {
+              navigate("/catalogo", {
                 replace: true,
               });
             }}
