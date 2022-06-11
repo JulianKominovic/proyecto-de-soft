@@ -54,6 +54,13 @@ const Catalogo = () => {
           {/* titulo seccion */}
           <p className="titulo-pedidos">Pedidos</p>
 
+          {/* Seccion elegir local*/}
+          <section className="elegir-local">
+            <Link to="/catalogo/elegirLocal">
+              <button className="boton">Pedí y Retirá</button>
+            </Link>
+          </section>
+
           {/* caja de filtros */}
           <section className="filtros">
             {filters.map((filter) => (

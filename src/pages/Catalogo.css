@@ -89,7 +89,6 @@
 
 /*Elegir Local*/
 .boton {
-  margin-top: 7px;
   border: 1px solid #007ef2;
   padding: 7px;
   background-color: #007ef2;
@@ -98,5 +97,5 @@
   font-family: 'Helvetica', sans-serif;
   border-radius: 5px;
   display: flex;
-  margin-left: 2rem;
+  margin-left: 20px;
 }
