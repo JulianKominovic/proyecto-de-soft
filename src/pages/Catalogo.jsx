@@ -7,6 +7,8 @@ import { useState } from "react";
 
 import "./Catalogo.css";
 import useCarrito from "../context/useCarrito";
+import Local from "../components/Local/Local";
+import useLocal from "../context/useLocal";
 
 <link
   href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee"
@@ -31,6 +33,8 @@ const Catalogo = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState(null);
   const { getCarritoItems } = useCarrito();
+  const { getLocal } = useLocal();
+
 
   useEffect(() => {
     fetch(`http://localhost:4000/api/products/`)
@@ -59,6 +63,13 @@ const Catalogo = () => {
             <Link to="/catalogo/elegirLocal">
               <button className="boton">Pedí y Retirá</button>
             </Link>
+
+            { getLocal()?.length > 0 ? (
+
+              <Local direccion={getLocal()}/>
+
+            ) : null}
+
           </section>
 
           {/* caja de filtros */}
