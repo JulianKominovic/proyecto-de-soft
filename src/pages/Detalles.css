@@ -4,19 +4,18 @@
 }
 
 .botonAtras {
-  max-width: 25px;
-  margin-top: 6px;
-  margin-left: 2px;
-  z-index: 999;
-  position: fixed;
+  width: 20px;
+  aspect-ratio: 1/1;
 }
 
 .nombre {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
   height: fit-content;
   text-align: left;
-  margin-top: 45px;
-  margin-left: 15px;
-  margin-right: 15px;
+  padding: 20px;
+  padding-top: 60px;
 }
 
 .nombre sub {

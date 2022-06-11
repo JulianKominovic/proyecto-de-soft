@@ -4,13 +4,12 @@ import "./CardProducto.css";
 const CardProducto = ({ imagen, precio, nombre, id }) => {
   return (
     <Link to={{ pathname: "/detalles", search: `id=${id}` }} className="card">
-      <div className="card-precio">
+      <img loading="lazy" decoding="async" className="card-img" src={imagen} />
+
+      <footer className="card-nombre">
+        {nombre}
         <p>{"$" + (precio - 1)}</p>
-      </div>
-
-      <img className="card-img" src={imagen} />
-
-      <p className="card-nombre">{nombre}</p>
+      </footer>
     </Link>
   );
 };

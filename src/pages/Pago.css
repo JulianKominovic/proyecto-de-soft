@@ -1,11 +1,3 @@
-.botonAtras {
-  max-width: 25px;
-  margin-top: 6px;
-  margin-left: 2px;
-  z-index: 999;
-  position: fixed;
-}
-
 .resumenPedido {
   text-align: left;
   margin-left: 20px;
