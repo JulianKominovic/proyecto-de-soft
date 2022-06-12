@@ -35,7 +35,6 @@ const Catalogo = () => {
   const { getCarritoItems } = useCarrito();
   const { getLocal } = useLocal();
 
-
   useEffect(() => {
     fetch(`http://localhost:4000/api/products/`)
       .then((response) => response.json())
@@ -64,12 +63,7 @@ const Catalogo = () => {
               <button className="boton">Pedí y Retirá</button>
             </Link>
 
-            { getLocal()?.length > 0 ? (
-
-              <Local direccion={getLocal()}/>
-
-            ) : null}
-
+            {getLocal()?.length > 0 ? <Local direccion={getLocal()} /> : null}
           </section>
 
           {/* caja de filtros */}
@@ -103,7 +97,7 @@ const Catalogo = () => {
           </section>
 
           {/* Boton Ver Carrito */}
-          {getCarritoItems()?.length > 0 ? (
+          {getCarritoItems()?.length > 0 && getLocal()?.length > 0 ? (
             <Link to={"/carrito"} key={"Ver Carrito"}>
               <button className="boton-ver-carrito">Ver Carrito</button>
             </Link>
