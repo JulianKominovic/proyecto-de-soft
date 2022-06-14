@@ -11,22 +11,22 @@ import Local from "../components/Local/Local";
 import useLocal from "../context/useLocal";
 
 <link
-  href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee"
-  rel="stylesheet"
-  type="text/css"
+	href="//db.onlinewebfonts.com/c/827d075b1538829cc0db75696e4d5fa2?family=Speedee"
+	rel="stylesheet"
+	type="text/css"
 />;
 
 const filters = [
-  "Promociones",
-  "McCombos",
-  "McOfertas",
-  "Sandwiches & Snacks",
-  "Cajita Feliz",
-  "Acompañamientos",
-  "Postres",
-  "Bebidas Frias y Calientes",
-  "Ensaladas",
-  "Desayunos y Meriendas",
+	"Promociones",
+	"McCombos",
+	"McOfertas",
+	"Sandwiches & Snacks",
+	"Cajita Feliz",
+	"Acompañamientos",
+	"Postres",
+	"Bebidas Frias y Calientes",
+	"Ensaladas",
+	"Desayunos y Meriendas",
 ];
 
 const Catalogo = () => {
@@ -35,30 +35,44 @@ const Catalogo = () => {
   const { getCarritoItems } = useCarrito();
   const { getLocal } = useLocal();
 
-  useEffect(() => {
-    fetch(`http://localhost:4000/api/products/`)
-      .then((response) => response.json())
-      .then((response) => {
-        setProducts(response);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+	const Filters = (e) => {
+		fetch(`http://localhost:4000/api/products/`)
+			.then((response) => response.json())
+			.then((response) => {
+				const filtrado = response.filter((r) => r.tags == e);
+				setProducts(filtrado);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
-  return (
-    <>
-      {" "}
-      {isLoading ? (
-        <h1 style={{ marginTop: "80px" }}>Cargando...</h1>
-      ) : (
-        <div className="catalogo">
-          {/* titulo seccion */}
-          <p className="titulo-pedidos">Pedidos</p>
+	useEffect(() => {
+		fetch(`http://localhost:4000/api/products/`)
+			.then((response) => response.json())
+			.then((response) => {
+				setProducts(response);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, []);
 
-          {/* Seccion elegir local*/}
-          <section className="elegir-local">
+     
+	return (
+		<>
+			{" "}
+			{isLoading ? (
+				<h1 style={{ marginTop: "80px" }}>Cargando...</h1>
+			) : (
+				<div className="catalogo">
+					{/* titulo seccion */}
+					<p className="titulo-pedidos">Pedidos</p>
+
+					     {/* Seccion elegir local*/}
+						 <section className="elegir-local">
             <Link to="/catalogo/elegirLocal">
               <button className="boton">Pedí y Retirá</button>
             </Link>
@@ -75,26 +89,27 @@ const Catalogo = () => {
             ))}
           </section>
 
-          <hr className="linea-horizontal" />
+					{/* caja de filtros */}
+					<section className="filtros">
+						{filters.map((filter) => (
+							<span
+								className="span-filtro"
+								key={filter}
+								onClick={() => Filters(filter)}
+							>
+								{filter}
+							</span>
+						))}
+					</section>
 
-          <div>
-            <p className="titulo-filtro">McCombos</p>
-          </div>
+					<hr className="linea-horizontal" />
 
-          {/* Cards */}
-          <section className="catalogo-cards">
-            {products.map((product) =>
-              !getCarritoItems().some((item) => item._id === product._id) ? (
-                <Card
-                  key={product.name}
-                  imagen={product.image}
-                  precio={product.price}
-                  nombre={product.name}
-                  id={product._id}
-                />
-              ) : null
-            )}
-          </section>
+					{/* titulo del filtro seleccionado */}
+					<div>
+						{/* {filters.map((filter) => (
+							<span key={filter}>{filter}</span>
+						))} */}
+					</div>
 
           {/* Boton Ver Carrito */}
           {getCarritoItems()?.length > 0 && getLocal()?.length > 0 ? (
