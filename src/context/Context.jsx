@@ -15,10 +15,10 @@ export const ContextProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    localStorage.setItem("carritoItems", carritoItems);
+    localStorage.setItem("carritoItems", JSON.stringify(carritoItems));
   }, [carritoItems]);
   useEffect(() => {
-    localStorage.setItem("localSelected", localSelected);
+    localStorage.setItem("localSelected", JSON.stringify(localSelected));
   }, [localSelected]);
 
   return (
