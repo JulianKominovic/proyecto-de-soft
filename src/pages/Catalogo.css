@@ -26,6 +26,7 @@
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
+  align-items: center;
 }
 
 .catalogo .filtros::-webkit-scrollbar {
@@ -42,10 +43,18 @@
 
 .catalogo-cards {
   display: flex;
-  flex-direction: column;
-  padding: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
 }
-
+@media (max-width: 500px) {
+  .catalogo-cards {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
 /* boton ver carrito */
 .catalogo .boton-ver-carrito {
   font-family: "speedee";
@@ -94,8 +103,18 @@
   background-color: #007ef2;
   color: #ffffff;
   text-decoration: none;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   border-radius: 5px;
   display: flex;
   margin-left: 20px;
+}
+
+.span-filtro.selected {
+  background-color: #ffe600;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+.span-filtro {
+  cursor: pointer;
+  user-select: none;
 }
