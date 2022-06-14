@@ -24,9 +24,28 @@
 }
 .carrito__delete__button {
   border-radius: 10px;
-  background-color: red;
+  background-color: #f80713;
   color: white;
   padding: 10px;
   width: 100%;
   font-weight: 900;
+}
+.carrito__editar__button {
+  border-radius: 10px;
+  background-color: #ffc72c;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  font-weight: 900;
+  color: black;
+}
+.box__eliminar__editar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.div-botonesCantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

@@ -56,3 +56,21 @@
   height: 65px;
   width: 100%;
 }
+
+.precio-total {
+  position: fixed;
+  padding: .25rem 1rem;
+  width: 100%;
+  background: #f80713;
+  color: white;
+  bottom: 65px;
+  right: 0;
+  font-size: larger;
+}
+
+.precio-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
