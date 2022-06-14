@@ -32,6 +32,19 @@ const Catalogo = () => {
   const [products, setProducts] = useState(null);
   const { getCarritoItems } = useCarrito();
 
+  const Filters = (e) => {
+    fetch(`http://localhost:4000/api/products/`)
+      .then((response) => response.json())
+      .then((response) => {
+        const filtrado = response.filter((r) => r.tags == e);
+        setProducts(filtrado);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     fetch(`http://localhost:4000/api/products/`)
       .then((response) => response.json())
@@ -57,7 +70,11 @@ const Catalogo = () => {
           {/* caja de filtros */}
           <section className="filtros">
             {filters.map((filter) => (
-              <span className="span-filtro" key={filter}>
+              <span
+                className="span-filtro"
+                key={filter}
+                onClick={() => Filters(filter)}
+              >
                 {filter}
               </span>
             ))}
