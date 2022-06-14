@@ -5,15 +5,19 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 10px;
+  max-width: 400px;
+  margin-bottom: 20px;
 }
 
 .carrito__card__details {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 .carrito__card__image {
   width: 50%;
   height: auto;
+  border-radius: 10px;
 }
 
 .carrito__card__side {
@@ -43,9 +47,15 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin-top: 16px;
+  gap: 10px;
 }
 .div-botonesCantidad {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
+}
+.div-botonesCantidad .botonesCantidad {
+  margin: 0;
 }

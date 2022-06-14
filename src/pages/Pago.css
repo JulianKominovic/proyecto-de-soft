@@ -1,3 +1,9 @@
+.botonAtras {
+  width: 20px;
+  aspect-ratio: 1/1;
+  margin-top: 50px;
+}
+
 .resumenPedido {
   text-align: left;
   margin-left: 20px;
@@ -80,6 +86,10 @@
 .fecha .campo {
   max-width: 45%;
   justify-self: left;
+}
+
+.ultimo {
+  margin-bottom: 70px;
 }
 
 .botonSubmit {

@@ -6,22 +6,19 @@ import swal from "sweetalert";
 import "./Pago.css";
 
 import { FlechaAtras } from "../assets/icons/Icons";
-
-const direccion = "Direccion del local prueva 1234";
-
-const carrito = [
-  { product: { precio: 500, nombre: "hamburguesa 1" }, cantidad: 1 },
-  { product: { precio: 250, nombre: "hamburguesa 2" }, cantidad: 3 },
-  { product: { precio: 500, nombre: "hamburguesa 3" }, cantidad: 2 },
-];
+import useCarrito from "../context/useCarrito";
+import useLocal from "../context/useLocal";
 
 const Pago = () => {
-  const precioTotal = carrito.reduce(
+  const { getCarritoItems } = useCarrito();
+  const { getLocal } = useLocal();
+  const redireccionar = useNavigate();
+
+  const precioTotal = getCarritoItems().reduce(
     (total, currentValue) =>
-      (total = total + currentValue.cantidad * currentValue.product.precio),
+      (total = total + currentValue.unidades * currentValue.price),
     0
   );
-  const redireccionar = useNavigate();
 
   const precioFormateado = new Intl.NumberFormat("es-AR", {
     style: "currency",
@@ -43,7 +40,7 @@ const Pago = () => {
             <p>
               <b>Direccion de retiro en local:</b>
             </p>
-            <p>{direccion}</p>
+            {getLocal()}
           </li>
           <li>
             <p>
@@ -107,7 +104,7 @@ const Pago = () => {
           </li>
           <li>
             <input
-              className="campo largo"
+              className="campo largo ultimo"
               type="text"
               placeholder="* Documento(Para retirar)"
             />
@@ -119,7 +116,7 @@ const Pago = () => {
         onClick={() => {
           swal(
             "Pago realizado correctamente",
-            `Se podrá retirar el pedido en:\n${direccion}`,
+            `Se podrá retirar el pedido en:\n${getLocal()}`,
             "success",
             {
               button: {

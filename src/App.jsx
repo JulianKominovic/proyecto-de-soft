@@ -8,6 +8,7 @@ import Detalles from "./pages/Detalles";
 import Pago from "./pages/Pago";
 import Carrito from "./pages/Carrito";
 import { ContextProvider } from "./context/Context";
+import { ElegirLocal } from "./components/ElegirLocal/ElegirLocal";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/detalles" element={<Detalles />} />
             <Route path="/pago" element={<Pago />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/catalogo/elegirLocal" element={<ElegirLocal />} />
           </Routes>
           <NavBar />
         </BrowserRouter>
